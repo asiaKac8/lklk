@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Prediction</title>
+
+        <style>
+            body {
+
+                background: rgba(84,58,183,1);
+                background: -webkit-linear-gradient(to right, rgba(84,58,183,1), rgba(0,172,193,1));
+                background: linear-gradient(to right, rgba(84,58,183,1), rgba(0,172,193,1));
+
+            }
+
+            .btn-primary {
+                background-color: aliceblue;
+                color: black;
+                border: 2px solid aliceblue;
+            }
+
+            .btn-primary:hover {
+                background-color: aliceblue;
+                color: white;
+                border: 2px solid aliceblue;
+            }
+
+            .modal-header{
+                background-color: aliceblue;
+            }
+
+            .modal-footer{
+                background-color: aliceblue;
+            }
+
+            .containerudb1 {
+                display: inline;
+                width: 20%;
+                float: left;
+                padding-left: 1%;
+                padding-right: 1%;
+            }
+
+            .containerudb2 {
+                width: 20%; 
+                overflow: auto;
+                padding-left: 1%;
+                padding-right: 1%;
+            }
+
+            .containerudb {
+                margin: 1%;
+            }
+
+            .list-group-item {
+                background-color: #fafafa;
+            }
+
+
+
+            .description{
+                position: absolute;
+                top: 25%;
+                left: 27%;
+                margin: auto;
+                padding: 2em;
+            }
+            .description h1{
+                color:aliceblue;
+            }
+            .description p{
+                color:aliceblue;
+                font-size: 20px;
+                width: 50%;
+                line-height: 1.5;
+            }
+            .description button{
+                border:1px  solid aliceblue;
+                background:aliceblue;
+                color:rgb(0, 147, 167);
+            }
+
+            a:hover, a:active, a:link, a:visited {
+                background-color: transparent;
+            }
+
+            .choice1 {
+                position: relative;
+
+                margin: auto;
+                padding-left: 40%;
+                padding-top: 10%;
+            }
+
+            .choice1 input{
+                width: 35ex;
+                height: 5ex;
+            }
+
+            .choice1 button{
+                width: 26ex;
+                height: 5ex;
+            }
+
+
+            .main_color1 {
+                background-color:aliceblue;
+            }
+
+            .hello-msg{
+                font-size: 18px;
+                color: #ffff;
+                margin-right: 20px;
+            }
+
+
+        </style>
+
+        {% block head %} 
+            
+        {% endblock %}
+
+    </head>
+
+
+
+
+
+    <body>
+        
+
+
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Iris
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="/prediction_page">Predict</a>
+                      <a class="dropdown-item" href="/iris_results">History</a>
+                      <a class="dropdown-item" href="/iris_export">Export</a>
+                      <a class="dropdown-item" href="/iris_import">Import</a>
+                      <a class="dropdown-item" href="/iris_imported">Imported</a>
+                    </div>
+                  </div>
+
+
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/udb">All Datasets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/udbchoice">Dataset</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/import_data">Import CSV</a>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="mx-auto order-0">
+                <a class="navbar-brand mx-auto" href="/"> <b>Start</b> </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+
+            <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+                <ul class="navbar-nav ml-auto">
+                    {% if user.is_authenticated %}
+                    <li>
+                        <span><a class="hello-msg" href="/logout">Logout</a></span>
+                        <span class="hello-msg">Hello, {{request.user}}</span>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register">Register</a>
+                    </li>
+                    {% endif %}
+                </ul>
+
+            </div>
+        
+
+
+        </nav>
+
+    {% block main %}
+    
+    {% endblock %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>

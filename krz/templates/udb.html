@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+
+
+{% block main %}
+
+
+<div class="containerudb">
+
+<div class="containerudb1">
+   <ul class="list-group">
+       <li class="list-group-item main_color1 text-center font-weight-bold">Zbior</li>
+
+   {% for value in data.dataset1 %}
+   <li class="list-group-item text-center"> <p>{{ value }}</p> </li>
+   {% endfor %}
+   </ul>
+</div>
+
+<div class="containerudb1">
+   <ul class="list-group">
+       <li class="list-group-item main_color1 text-center font-weight-bold">Klasa</li>
+
+   {% for value in data.dataset2 %}
+   <li class="list-group-item text-center"> <p>{{ value }}</p> </li>
+   {% endfor %}
+   </ul>
+</div>
+
+
+<div class="containerudb1">
+   <ul class="list-group">
+       <li class="list-group-item main_color1 text-center font-weight-bold">Atrybuty</li>
+
+   {% for value in data.dataset3 %}
+   <li class="list-group-item text-center"> <p>{{ value }}</p> </li>
+   {% endfor %}
+   </ul>
+</div>
+
+<div class="containerudb1">
+   <ul class="list-group">
+       <li class="list-group-item main_color1 text-center font-weight-bold">Obserwacja</li>
+
+   {% for value in data.dataset4 %}
+   <li class="list-group-item text-center"> <p>{{ value }}</p> </li>
+   {% endfor %}
+   </ul>
+</div>
+
+<div class="containerudb2">
+   <ul class="list-group">
+       <li class="list-group-item main_color1 text-center font-weight-bold">Dana</li>
+
+      {% for value in data.dataset5 %}
+         <li class="list-group-item text-center"> <p>{{ value }}</p> </li>
+      {% endfor %}
+   </ul>
+</div>
+
+</div>
+
+
+
+
+
+{% endblock %}

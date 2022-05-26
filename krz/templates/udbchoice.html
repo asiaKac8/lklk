@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+
+
+{% block main %}
+
+
+ <div class="choice1">
+   <h5>Write below number of dataset:</h5>
+   <form action="/udbdf/" method="get">
+      <label for="your_name">  </label> </br>
+      <input id="id" type="number" name="id" step="1" value="{{ current_id }}">  </br>
+      <input type="submit" value="Show dataset">  </br>
+   </form>
+
+   </br>
+
+   <form action="/train_model/" method="get">
+      <label for="your_name">  </label> </br>
+      <input id="id" type="number" name="id" step="1" value="{{ current_id }}">  </br>
+      <input type="submit" value="Train model">  </br>
+   </form>
+   
+
+
+</div>
+
+
+{% endblock %}

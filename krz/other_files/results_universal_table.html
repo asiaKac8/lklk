@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <div class="container pt-5">
+        <div class="row">
+
+        <h1>User Input History</h1>
+
+            <table class="table">
+                <thead>
+                <tr>
+                <th scope="col">id</th>
+                <th scope="col">a1</th>
+                <th scope="col">a2</th>
+                <th scope="col">a3</th>
+                <th scope="col">a4</th>
+                <th scope="col">a5</th>
+                <th scope="col">a6</th>
+                <th scope="col">a7</th>
+                <th scope="col">a8</th>
+                <th scope="col">a9</th>
+                <th scope="col">a10</th>
+                <th scope="col">c1</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for data in dataset %}
+                    <tr>
+                    <th scope="row">{{ data.id }}</th>
+                    <td>{{ data.a1 }}</td>
+                    <td>{{ data.a2 }}</td>
+                    <td>{{ data.a3 }}</td>
+                    <td>{{ data.a4 }}</td>
+                    <td>{{ data.a5 }}</td>
+                    <td>{{ data.a6 }}</td>
+                    <td>{{ data.a7 }}</td>
+                    <td>{{ data.a8 }}</td>
+                    <td>{{ data.a9 }}</td>
+                    <td>{{ data.a10 }}</td>
+                    <td>{{ data.c1 }}</td>
+
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

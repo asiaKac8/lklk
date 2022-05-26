@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block main %}
+    
+    <div class="container pt-5">
+
+    <div class="">
+        <a href="/iris_train_model"><span style="font-size: larger">Train Model</span></a>
+    </div>
+
+        <div class="row">
+
+        <h1>Imported</h1>
+
+            <table class="table">
+                <thead>
+                <tr>
+                <th scope="col">Sepal length</th>
+                <th scope="col">Sepal width</th>
+                <th scope="col">Petal length</th>
+                <th scope="col">Petal width</th>
+                <th scope="col">Prediction</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for data in dataset %}
+                    <tr>
+                    <td>{{ data.sepal_length }}</td>
+                    <td>{{ data.sepal_width }}</td>
+                    <td>{{ data.petal_length }}</td>
+                    <td>{{ data.petal_width }}</td>
+                    <td>{{ data.classification }}</td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

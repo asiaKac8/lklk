@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+{% endblock %}
+
+
+
+
+{% block main %}
+<header class="header">
+    <div class="overlay"></div>
+     <div class="container">
+      
+     </div>
+    
+  </header>
+
+  <div class="description ">
+    <h1>    Classification Application
+        <p>
+            You can upload a dataset here, then learn it and perform classification.
+            If you want to see how this works using the popular Iris dataset as an example,
+            click the button below.
+        </p>   
+
+        <a href="/prediction_page">
+            <button class="btn btn-outline-secondary btn-lg">Show me!</button>
+        </a>  
+    </h1>  
+ </div>
+
+
+
+{% endblock %}
